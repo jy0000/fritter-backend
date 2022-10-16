@@ -1,3 +1,4 @@
+
 // Show an object on the screen.
 function showObject(obj) {
   const pre = document.getElementById('response');
@@ -38,7 +39,10 @@ const formsAndHandlers = {
   'view-freets-by-author': viewFreetsByAuthor,
   'create-freet': createFreet,
   'edit-freet': editFreet,
-  'delete-freet': deleteFreet
+  'delete-freet': deleteFreet,
+  'view-all-displays': viewAllDisplays,
+  'view-displays-by-author': viewDisplaysByAuthor,
+  'edit-display': editDisplay
 };
 
 // Attach handlers to forms

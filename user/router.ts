@@ -4,6 +4,7 @@ import FreetCollection from '../freet/collection';
 import UserCollection from './collection';
 import * as userValidator from '../user/middleware';
 import * as util from './util';
+import DisplayCollection from '../display/collection';
 
 const router = express.Router();
 
@@ -91,6 +92,7 @@ router.post(
       message: `Your account was created successfully. You have been logged in as ${user.username}`,
       user: util.constructUserResponse(user)
     });
+    await DisplayCollection.addOne(user._id);
   }
 );
 
@@ -141,6 +143,7 @@ router.delete(
     const userId = (req.session.userId as string) ?? ''; // Will not be an empty string since its validated in isUserLoggedIn
     await UserCollection.deleteOne(userId);
     await FreetCollection.deleteMany(userId);
+    await DisplayCollection.deleteOne(userId);
     req.session.userId = undefined;
     res.status(200).json({
       message: 'Your account has been deleted successfully.'

@@ -175,6 +175,47 @@ The following api routes have already been implemented for you (**Make sure to d
 
 This renders the `index.html` file that will be used to interact with the backend
 
+
+<details markdown = "1">
+<summary>Display</summary>
+
+#### `GET /api/display?user=USERNAME` - Get display by user
+
+**Returns**
+
+- An display for user with username `user`
+
+**Throws**
+
+- `400` if `user` is not given
+- `404` if `user` is not a recognized username of any user
+
+
+#### `PUT /api/display/` - Updated display
+
+**Body**
+
+- `displayType` _{string}_ - The new display of user. (Must be either {`default`, `dark`, `accessible`} case-insensitive)
+
+**Returns**
+
+- A success message
+- A object with the updated display
+
+**Throws**
+
+- `403` if the user is not logged in
+- `400` If the `displayType` is not a valid string (case-insensitive)
+
+
+</details>
+
+
+
+
+<details markdown = "1">
+<summary>Freets</summary>
+
 #### `GET /api/freets` - Get all the freets
 
 **Returns**
@@ -239,6 +280,13 @@ This renders the `index.html` file that will be used to interact with the backen
 - `403` if the user is not the author of the freet
 - `400` if the new freet content is empty or a stream of empty spaces
 - `413` if the new freet content is more than 140 characters long
+
+</details>
+
+
+
+<details> 
+<summary> Users </summary>
 
 #### `POST /api/users/session` - Sign in user
 
@@ -313,3 +361,5 @@ This renders the `index.html` file that will be used to interact with the backen
 **Throws**
 
 - `403` if the user is not logged in
+
+</details>

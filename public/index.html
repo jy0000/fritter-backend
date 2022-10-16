@@ -5,6 +5,7 @@
   <meta name="author" content="6.170 Staff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="/scripts/display.js"></script>
   <script src="/scripts/freet.js"></script>
   <script src="/scripts/user.js"></script>
   <script src="/scripts/index.js"></script>
@@ -116,9 +117,39 @@
             <input id="id" name="id">
           </div>
           <input type="submit" value="Delete Freet">
+        </form>        
+
+        <form id="view-all-displays">
+          <h3>View All Displays</h3>
+          <input type="submit" value="View All Displays">
         </form>
+
+        <form id="view-displays-by-author">
+          <h3>View Displays By Author</h3>
+          <div>
+            <label for="author">Author:</label>
+            <input id="author" name="author">
+          </div>
+          <input type="submit" value="View Display By Author">
+        </form>
+
+        <form id="edit-display">
+          <h3>Edit Display</h3>
+          <div>
+            <label for="id">ID:</label>
+            <input id="id" name="id">
+          </div>
+          <div>
+            <label for="displayType">DisplayType:</label>
+            <textarea id="displayType" name="displayType"></textarea>
+          </div>
+          <input type="submit" value="Edit Freet">
+        </form>
+
       </div>
     </section>
+
+
     <section>
       <h2>Response:</h2>
       <div class="scrollbox">
