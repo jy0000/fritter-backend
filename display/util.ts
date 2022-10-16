@@ -31,7 +31,8 @@ const constructDisplayResponse = (display: HydratedDocument<Display>): DisplayRe
       versionKey: false // Cosmetics; prevents returning of __v property
     })
   };
-  const {username} = displayCopy.authorId;
+  console.log(displayCopy);
+  const {username} = displayCopy.authorId; //TODO
   delete displayCopy.authorId;
   return {
     ...displayCopy,

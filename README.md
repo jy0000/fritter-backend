@@ -176,10 +176,14 @@ The following api routes have already been implemented for you (**Make sure to d
 This renders the `index.html` file that will be used to interact with the backend
 
 
+[comment]: <> (TODO: Change get to only return current user's display)
+#### `GET /api/displays` - Get all the displays
+
 <details markdown = "1">
 <summary>Display</summary>
 
 #### `GET /api/display?user=USERNAME` - Get display by user
+
 
 **Returns**
 
@@ -211,6 +215,7 @@ This renders the `index.html` file that will be used to interact with the backen
 </details>
 
 
+[comment]: <> (TODO: displayType type should be a DisplayType interface that is implemented in Default,Dark,Accessible)
 
 
 <details markdown = "1">

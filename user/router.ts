@@ -92,7 +92,7 @@ router.post(
       message: `Your account was created successfully. You have been logged in as ${user.username}`,
       user: util.constructUserResponse(user)
     });
-    await DisplayCollection.addOne(user._id);
+    await DisplayCollection.addOne(user._id); //TODO user._id or user
   }
 );
 
