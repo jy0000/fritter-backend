@@ -177,6 +177,7 @@ This renders the `index.html` file that will be used to interact with the backen
 
 
 [comment]: <> (TODO: Change get to only return current user's display)
+
 <details markdown = "1">
 <summary>Display</summary>
 
@@ -220,6 +221,8 @@ This renders the `index.html` file that will be used to interact with the backen
 
 [comment]: <> (TODO: displayType type should be a DisplayType interface that is implemented in Default,Dark,Accessible)
 
+[comment]: <> (QUESTION: Is session defined as how long they are logged in or new window? Can they have multiple sessions? Probably not. So if a user is in default they enter a new incognito session and is in that session until they leave that session. when they go on the page again they will still be in incognito mode)
+
 <details markdown = "1">
 <summary>IncognitoSession</summary>
 
@@ -228,7 +231,7 @@ This renders the `index.html` file that will be used to interact with the backen
 **Returns**
 
 - An boolean of session 
-[comment]: <> (QUESTION: Is session defined as how long they are logged in or new window? Can they have multiple sessions? Probably not. So if a user is in default they enter a new incognito session and is in that session until they leave that session. when they go on the page again they will still be in incognito mode)
+
 
 **Throws**
 
