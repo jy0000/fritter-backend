@@ -177,13 +177,16 @@ This renders the `index.html` file that will be used to interact with the backen
 
 
 [comment]: <> (TODO: Change get to only return current user's display)
-#### `GET /api/displays` - Get all the displays
-
 <details markdown = "1">
 <summary>Display</summary>
 
-#### `GET /api/display?user=USERNAME` - Get display by user
+#### `GET /api/displays` - Get all the displays
 
+**Returns**
+
+- An array of all displays sorted in descending order by date modified
+
+#### `GET /api/display?user=USERNAME` - Get display by user
 
 **Returns**
 
@@ -216,6 +219,133 @@ This renders the `index.html` file that will be used to interact with the backen
 
 
 [comment]: <> (TODO: displayType type should be a DisplayType interface that is implemented in Default,Dark,Accessible)
+
+<details markdown = "1">
+<summary>IncognitoSession</summary>
+
+#### `GET /api/incognitoSession` - Get status of user's incognito mode
+
+**Returns**
+
+- An boolean of session 
+[comment]: <> (QUESTION: Is session defined as how long they are logged in or new window? Can they have multiple sessions? Probably not. So if a user is in default they enter a new incognito session and is in that session until they leave that session. when they go on the page again they will still be in incognito mode)
+
+**Throws**
+
+- `400` if user not logged in
+
+#### `POST /api/incognitoSession` - Create a new incognito session
+
+**Returns**
+
+- A success message
+- A object with the created incognitoSession
+
+**Throws**
+
+- `403` if the user is not logged in
+
+#### `DELETE /api/incognitoSession/:incognitoSessionID?` - Delete an existing incognito session
+
+**Returns**
+
+- A success message
+
+**Throws**
+
+- `403` if the user is not logged in
+- `403` if the user is not the author of the freet
+- `404` if the incognitoSessionId is invalid
+
+</details>
+
+
+
+<details markdown = "1">
+<summary>Profile Type</summary>
+
+#### `GET /api/profile` - Get all the profiles
+
+**Returns**
+
+- An array of all profiles sorted in descending order by date modified
+
+#### `GET /api/profiles?author=USERNAME` - Get profiles by user
+
+**Returns**
+
+- An array of profiles created by user with username `author`
+
+**Throws**
+
+- `400` if `author` is not given
+- `404` if `author` is not a recognized username of any user
+
+#### `POST /api/profiles` - Create a new profile
+
+**Returns**
+
+- A success message
+- A object with the created session
+
+**Throws**
+
+- `403` if the user is not logged in
+
+#### `DELETE /api/profiles/:profileId?` - Delete an existing profile
+
+**Returns**
+
+- A success message
+
+**Throws**
+
+- `403` if the user is not logged in
+- `403` if the user is not the author of the freet
+- `404` if the freetId is invalid
+
+</details>
+
+
+
+<details markdown = "1">
+<summary>Tutorial</summary>
+
+#### `GET /api/tutorialSession` - Get if session is in tutorial mode
+
+**Returns**
+
+- An boolean of if session is Tutorial mode or not
+
+**Throws**
+
+- `400` if user not logged in
+
+#### `POST /api/tutorialSession` - Create a new tutorial session
+
+**Returns**
+
+- A success message
+- A object with the created tutorialSession
+
+**Throws**
+
+- `403` if the user is not logged in
+
+#### `DELETE /api/tutorialSession/:tutorialSessionID?` - Delete an existing tutorial session
+
+**Returns**
+
+- A success message
+
+**Throws**
+
+- `403` if the user is not logged in
+- `403` if the user is not the author of the freet
+- `404` if the tutorialSessionId is invalid
+
+</details>
+
 
 
 <details markdown = "1">

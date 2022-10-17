@@ -32,7 +32,7 @@ const constructDisplayResponse = (display: HydratedDocument<Display>): DisplayRe
     })
   };
   console.log(displayCopy);
-  const {username} = displayCopy.authorId; //TODO
+  const {username} = displayCopy.authorId;
   delete displayCopy.authorId;
   return {
     ...displayCopy,
