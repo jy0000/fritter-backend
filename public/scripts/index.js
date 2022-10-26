@@ -42,7 +42,23 @@ const formsAndHandlers = {
   'delete-freet': deleteFreet,
   'view-all-displays': viewAllDisplays,
   'view-displays-by-author': viewDisplaysByAuthor,
-  'edit-display': editDisplay
+  'edit-display': editDisplay,
+  'view-incognito-sessions': viewIncognito,
+  'create-incognito-session': createIncognito,
+  'delete-incognito-session': deleteIncognito,
+  'delete-all-incognito-sessions': deleteAllIncognito,
+  'view-profiles': viewAllProfiles,
+  'view-profiles-by-user': viewProfilesByUser,
+  'create-profile': createProfile,
+  'edit-profile': editProfile,
+  'delete-profile': deleteProfile,
+  'view-all-reactions': viewAllReactions,
+  // 'view-reactions-by-user': viewReactionsByUser,
+  'view-reactions-by-freet': viewReactionsByFreet,
+  'create-reaction': createReaction,
+  'edit-reaction': editReaction,
+  'delete-reaction': deleteReaction
+
 };
 
 // Attach handlers to forms

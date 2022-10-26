@@ -5,6 +5,9 @@ import UserCollection from './collection';
 import * as userValidator from '../user/middleware';
 import * as util from './util';
 import DisplayCollection from '../display/collection';
+import IncognitoCollection from '../incognito/collection';
+import ProfileCollection from '../profile/collection';
+import ReactionCollection from '../reaction/collection';
 
 const router = express.Router();
 
@@ -56,7 +59,8 @@ router.delete(
   [
     userValidator.isUserLoggedIn
   ],
-  (req: Request, res: Response) => {
+  async (req: Request, res: Response) => {
+    await IncognitoCollection.deleteMany(req.session.userId);
     req.session.userId = undefined;
     res.status(200).json({
       message: 'You have been logged out successfully.'
@@ -144,6 +148,9 @@ router.delete(
     await UserCollection.deleteOne(userId);
     await FreetCollection.deleteMany(userId);
     await DisplayCollection.deleteOne(userId);
+    await IncognitoCollection.deleteMany(userId);
+    await ProfileCollection.deleteMany(userId);
+    await ReactionCollection.deleteMany(userId);
     req.session.userId = undefined;
     res.status(200).json({
       message: 'Your account has been deleted successfully.'

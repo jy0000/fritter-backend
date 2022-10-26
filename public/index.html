@@ -5,6 +5,9 @@
   <meta name="author" content="6.170 Staff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="/scripts/incognito.js"></script>
+  <script src="/scripts/profile.js"></script>
+  <script src="/scripts/reaction.js"></script>
   <script src="/scripts/display.js"></script>
   <script src="/scripts/freet.js"></script>
   <script src="/scripts/user.js"></script>
@@ -143,12 +146,151 @@
             <label for="displayType">DisplayType:</label>
             <textarea id="displayType" name="displayType"></textarea>
           </div>
-          <input type="submit" value="Edit Freet">
+          <input type="submit" value="Edit Display">
         </form>
+
+        <form id="view-incognito-sessions">
+          <h3>View All Incognito Sessions</h3>
+          <input type="submit" value="View All Incognito Sessions">
+        </form>
+
+        <form id="create-incognito-session">
+          <h3>Create Incognito Session</h3>
+          <input type="submit" value="Create Incognito Session">
+        </form>
+
+        <form id="delete-incognito-session">
+          <h3>Delete Incognito Session</h3>
+          <div>
+            <label for="id">ID:</label>
+            <input id="id" name="id">
+          </div>
+          <input type="submit" value="Delete Incognito Session">
+        </form> 
+
+        <form id="delete-all-incognito-sessions">
+          <h3>Delete All Incognito Sessions</h3>
+          <input type="submit" value="Delete All Incognito Sessions">
+        </form> 
+
+        <form id="view-profiles">
+          <h3>View All Profiles</h3>
+          <input type="submit" value="View All Profiles">
+        </form>
+        
+        <form id="view-profiles-by-user">
+          <h3>View Profiles By User</h3>
+          <div>
+            <label for="user">User:</label>
+            <input id="user" name="user">
+          </div>
+          <input type="submit" value="View Profile By User">
+        </form>
+
+        <form id="create-profile">
+          <h3>Create Profile</h3>
+          <div>
+            <label for="handle">Handle:</label>
+            <input id="handle" name="handle">
+          </div>
+          <div>
+            <label for="type">Type (Business, Personal, Private):</label>
+            <input id="type" name="type">
+          </div>
+          <div>
+            <label for="bio">Bio:</label>
+            <input id="bio" name="bio">
+          </div>
+          <input type="submit" value="Create Profile">
+        </form>
+        
+        <form id="edit-profile">
+          <h3>Edit Profile</h3>
+          <div>
+            <label for="old_handle">Old Handle:</label>
+            <input id="old_handle" name="old_handle">
+          </div>
+          <div>
+            <label for="handle">Handle:</label>
+            <input id="handle" name="handle">
+          </div>
+          <div>
+            <label for="bio">Bio:</label>
+            <input id="bio" name="bio">
+          </div>
+          <input type="submit" value="Edit Profile">
+        </form>
+
+        <form id="delete-profile">
+          <h3>Delete Profile Session</h3>
+          <div>
+            <label for="id">ID:</label>
+            <input id="id" name="id">
+          </div>
+          <input type="submit" value="Delete Profile">
+        </form> 
+
+
+        <form id="view-all-reactions">
+          <h3>View All Reactions</h3>
+          <input type="submit" value="View All Reactions">
+        </form>
+
+        <!-- <form id="view-reactions-by-user">
+          <h3>View Reactions By User</h3>
+          <div>
+            <label for="user">Username:</label>
+            <input id="user" name="user">
+          </div>
+          <input type="submit" value="View Reactions By User">
+        </form> -->
+
+        <form id="view-reactions-by-freet">
+          <h3>View Reactions By Freet</h3>
+          <div>
+            <label for="freetId">Freet ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <input type="submit" value="View Reactions By Freet">
+        </form>
+
+        <form id="create-reaction">
+          <h3>Create Reaction</h3>
+          <div>
+            <label for="freetId">Freet ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <div>
+            <label for="symbol">Reaction Symbol (Heart, Like, Dislike):</label>
+            <input id="symbol" name="symbol">
+          </div>
+          <input type="submit" value="Create Reaction">
+        </form>
+
+        <form id="edit-reaction">
+          <h3>Edit Reaction</h3>
+          <div>
+            <label for="freetId">Freet ID:</label>
+            <input id="freetId" name="freetId">
+          </div>
+          <div>
+            <label for="symbol">Reaction Symbol (Heart, Like, Dislike):</label>
+            <input id="symbol" name="symbol">
+          </div>
+          <input type="submit" value="Edit Reaction">
+        </form>
+
+        <form id="delete-reaction">
+          <h3>Delete Reaction</h3>
+          <div>
+            <label for="freetid">Freet ID:</label>
+            <input id="freetid" name="freetid">
+          </div>
+          <input type="submit" value="Delete Reaction">
+        </form>        
 
       </div>
     </section>
-
 
     <section>
       <h2>Response:</h2>

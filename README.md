@@ -224,20 +224,20 @@ This renders the `index.html` file that will be used to interact with the backen
 [comment]: <> (QUESTION: Is session defined as how long they are logged in or new window? Can they have multiple sessions? Probably not. So if a user is in default they enter a new incognito session and is in that session until they leave that session. when they go on the page again they will still be in incognito mode)
 
 <details markdown = "1">
-<summary>IncognitoSession</summary>
+<summary>Incognito</summary>
 
-#### `GET /api/incognitoSession` - Get status of user's incognito mode
+#### `GET /api/incognito` - Get status of user's incognito mode
 
 **Returns**
 
-- An boolean of session 
+- list of incognito sessions
 
 
 **Throws**
 
 - `400` if user not logged in
 
-#### `POST /api/incognitoSession` - Create a new incognito session
+#### `POST /api/incognito` - Create a new incognito session
 
 **Returns**
 
@@ -248,7 +248,7 @@ This renders the `index.html` file that will be used to interact with the backen
 
 - `403` if the user is not logged in
 
-#### `DELETE /api/incognitoSession/:incognitoSessionID?` - Delete an existing incognito session
+#### `DELETE /api/incognito/:incognitoID?` - Delete an existing incognito session
 
 **Returns**
 
@@ -258,8 +258,10 @@ This renders the `index.html` file that will be used to interact with the backen
 
 - `403` if the user is not logged in
 - `403` if the user is not the author of the freet
-- `404` if the incognitoSessionId is invalid
+- `404` if the incognitoId is invalid
 
+**Notes**
+All sessions deleted when user logs out
 </details>
 
 
