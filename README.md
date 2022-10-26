@@ -242,7 +242,7 @@ This renders the `index.html` file that will be used to interact with the backen
 **Returns**
 
 - A success message
-- A object with the created incognitoSession
+- A object with the created incognito
 
 **Throws**
 
@@ -261,7 +261,7 @@ This renders the `index.html` file that will be used to interact with the backen
 - `404` if the incognitoId is invalid
 
 **Notes**
-All sessions deleted when user logs out
+All sessions deleted when user logs out (sessions don't delete when server crashes and they did not log out)
 </details>
 
 
@@ -275,16 +275,16 @@ All sessions deleted when user logs out
 
 - An array of all profiles sorted in descending order by date modified
 
-#### `GET /api/profiles?author=USERNAME` - Get profiles by user
+#### `GET /api/profiles?user=USERNAME` - Get profiles by user
 
 **Returns**
 
-- An array of profiles created by user with username `author`
+- An array of profiles created by user with username `user`
 
 **Throws**
 
-- `400` if `author` is not given
-- `404` if `author` is not a recognized username of any user
+- `400` if `user` is not given
+- `404` if `user` is not a recognized username of any user
 
 #### `POST /api/profiles` - Create a new profile
 
@@ -316,38 +316,57 @@ All sessions deleted when user logs out
 <details markdown = "1">
 <summary>Tutorial</summary>
 
-#### `GET /api/tutorialSession` - Get if session is in tutorial mode
+#### `GET /api/reactions` - Get reactions
 
 **Returns**
 
-- An boolean of if session is Tutorial mode or not
+- reaction object of all reactions
 
-**Throws**
-
-- `400` if user not logged in
-
-#### `POST /api/tutorialSession` - Create a new tutorial session
+#### `GET /api/reactions/:freetId` - Get reactions for freet
 
 **Returns**
 
-- A success message
-- A object with the created tutorialSession
+- list of reaction object of all reactions on that freet
 
-**Throws**
-
-- `403` if the user is not logged in
-
-#### `DELETE /api/tutorialSession/:tutorialSessionID?` - Delete an existing tutorial session
+#### `POST /api/reactions/:freetId` - Create a new reaction for the freet
 
 **Returns**
 
 - A success message
+- A object with the created reaction
 
 **Throws**
 
 - `403` if the user is not logged in
-- `403` if the user is not the author of the freet
-- `404` if the tutorialSessionId is invalid
+- `400` if freet does not exist
+- `400` if user already has a reaction
+- `400` if reaction is not valid type (heart,like, dislike)
+
+#### `PUT /api/reactions/:freetId` - Create a new reaction for the freet
+
+**Returns**
+
+- A success message
+- A object with the created reaction
+
+**Throws**
+
+- `403` if the user is not logged in
+- `400` if freet does not exist
+- `400` if user does not already have reaction on freet
+- `400` if reaction is not valid type (heart,like, dislike)
+
+#### `DELETE /api/reaction/:freetID?` - Delete an existing reaction
+
+**Returns**
+
+- A success message
+
+**Throws**
+
+- `403` if the user is not logged in
+- `400` if freet does not exist
+- `400` if user does not have a reaction on that freet
 
 </details>
 
